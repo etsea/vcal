@@ -35,12 +35,12 @@ fn construct_calendar_info(t time.Time) CalendarInfo {
 }
 
 fn print_month_header(cal CalendarInfo) {
-	header := '${cal.long_month} ${cal.year}'
+	header := term.bold('${cal.long_month} ${cal.year}')
 	print(term.header_left(header, '='))
 }
 
 fn print_days_header() {
-	println(' Mo Tu We Th Fr Sa Su ')
+	println(term.bold(' Mo Tu We Th Fr Sa Su '))
 }
 
 fn pad_day_no(day u64) string {
@@ -57,7 +57,12 @@ fn print_calendar(cal CalendarInfo) {
 			if line == 1 && date < cal.first_day {
 				print('   ')
 			} else if print_day <= cal.days {
-				print(pad_day_no(print_day))
+				formatted_day := pad_day_no(print_day)
+				if print_day == u64(cal.current_day) {
+					print(term.red(formatted_day))
+				} else {
+					print(formatted_day)
+				}
 				print_day++
 			}
 			if print_day > cal.days {
