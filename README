@@ -1,0 +1,25 @@
+VCAL
+====
+VCAL is a simple program written in Vlang. Its primary function is to display a formatted calendar of the current month in the terminal.
+
+Installation and Running
+------------------------
+1. Ensure you have Vlang installed on your system.
+2. Clone this repository.
+3. Navigate to the project directory: `cd vcal/`
+4. Build the project: `v -prod .`
+5. Run the built executable.
+
+Features
+--------
+- Displays the current month in a terminal-friendly format.
+- Highlights the current day.
+- Proof-of-concept for learning Vlang.
+
+Contributing
+------------
+This project is primarily a proof-of-concept created as part of my learning journey with Vlang. While it's not actively seeking contributions, feedback or suggestions on improving the code or adopting best practices in Vlang are always appreciated.
+
+License
+-------
+MIT
